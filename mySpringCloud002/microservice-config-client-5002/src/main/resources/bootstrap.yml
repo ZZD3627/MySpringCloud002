@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: application-dev
+  cloud:
+    config:
+      name: crm
+      uri: http://localhost:4001
+      profile: dev
+      label: main
+      fail-fast: true
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

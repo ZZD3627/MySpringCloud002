@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-consumer-feign-hystrix-order" />
+        <module name="cloud-provide-payment-gateway" />
+        <module name="microservice-config-server-4001" />
+        <module name="cloud-consumer-hystrix-dashboard" />
+        <module name="cloud-api-commoms" />
+        <module name="microservice-config-client-5002" />
+        <module name="my-rabbitmq-consumer001" />
+        <module name="cloud-provider-hystrix-fusing-payment8004" />
+        <module name="cloud-config-center" />
+        <module name="cloud-stream-rabbitmq-provider8801" />
+        <module name="cloud-stream-rabbitmq-consumer8802" />
+        <module name="cloud-stream-rabbitmq-consumer8803" />
+        <module name="cloud-eureka-server" />
+        <module name="cloud-provide-payment02" />
+        <module name="cloud-gateway-gateway9527" />
+        <module name="cloud-consumer-order" />
+        <module name="microservice-eureka-server-config" />
+        <module name="my-rabbitmq-provider001" />
+        <module name="microservice-config-client-5001" />
+        <module name="cloud-provide-payment" />
+        <module name="cloud-eureka-server02" />
+        <module name="cloud-consumer-feign-order" />
+        <module name="cloud-provider-hystrix-payment8003" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MyRabbitMQServer" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

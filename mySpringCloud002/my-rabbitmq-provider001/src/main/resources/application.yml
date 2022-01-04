@@ -1,0 +1,30 @@
+srping:
+  # rabbitmq消息队列配置
+  rabbitmq:
+    password: guest
+    username: guest
+    port: 5672
+    addresses: localhost
+    #开启发送失败返回
+    publisher-returns: true
+    #配置确认回调
+    publisher-confirm-type: correlated
+#    publisher-confirms: true
+    listener:
+      simple:
+        #指定最小的消费者数量.
+        concurrency: 5
+        #指定最大的消费者数量.
+        max-concurrency: 10
+        #开启ack
+        acknowledge-mode: auto
+        # 最多一次消费多少条数据 -限流
+        prefetch: 1
+      #开启ack
+      direct:
+        acknowledge-mode: auto
+    #支持消息的确认与返回
+    template:
+      mandatory: true
+server:
+  port: 5600

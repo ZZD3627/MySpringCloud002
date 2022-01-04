@@ -1,0 +1,30 @@
+server:
+  port: 4001
+
+spring:
+  # RabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  application:
+    name:  microservice-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ZZD3627/Springcloud-config.git
+          default-label: main  #加入这个配置就可以正常请求到git上的配置文件了
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+# 暴露总线刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
