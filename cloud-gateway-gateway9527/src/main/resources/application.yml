@@ -1,0 +1,30 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment_route # 路由的id,没有规定规则但要求唯一,建议配合服务名
+          #匹配后提供服务的路由地址
+#          uri: http://localhost:8001
+          uri: lb://MCROSERVICE-PAYMENT
+          predicates:
+            - Path=/payment/get/** # 断言，路径相匹配的进行路由
+            - After=2021-12-31T17:00:00.662+08:00[Asia/Shanghai] #断言在当前时间之后才可以访问
+        - id: payment_route2
+#          uri: http://localhost:8001
+          uri: lb://MCROSERVICE-PAYMENT
+          predicates:
+            Path=/payment/lb/** #断言,路径相匹配的进行路由,   此路径下的接口暂时还没有实现，或者放到其他提供者去实现了
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
